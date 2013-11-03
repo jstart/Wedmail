@@ -7,6 +7,9 @@
 //
 
 #import "CLTAppDelegate.h"
+#import "LaunchViewController.h"
+
+#import <UIColor-Utilities/UIColor+Expanded.h>
 
 @implementation CLTAppDelegate
 
@@ -14,7 +17,15 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+
+    LaunchViewController * launchViewController = [[LaunchViewController alloc] init];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:launchViewController];
+    [navigationController setNavigationBarHidden:YES];
+
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"bcd756"]];
+
+    self.window.rootViewController = navigationController;
+
     [self.window makeKeyAndVisible];
     return YES;
 }
