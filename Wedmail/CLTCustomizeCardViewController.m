@@ -7,12 +7,13 @@
 //
 
 #import "CLTCustomizeCardViewController.h"
-#import "CLTInviteViewController.h"
+#import "CLTImportAddressesViewController.h"
 
 #import <QBFlatButton/QBFlatButton.h>
 #import <UIColor-Utilities/UIColor+Expanded.h>
 #import <TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h>
 #import "UIImage+Width.h"
+#import "UIView+Rasterize.h"
 
 @interface CLTCustomizeCardViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -37,6 +38,8 @@
     if (self) {
         // Custom initialization
         self.title = @"Make it yours";
+        UIBarButtonItem * rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(changeImage:)];
+        self.navigationItem.rightBarButtonItem = rightButton;
     }
     return self;
 }
@@ -72,12 +75,28 @@
 }
 
 - (IBAction)next:(id)sender {
-    CLTInviteViewController * inviteViewController = [[CLTInviteViewController alloc] init];
-    [self.navigationController pushViewController:inviteViewController animated:YES];
+    CLTImportAddressesViewController * importViewController = [[CLTImportAddressesViewController alloc] init];
+    [self.navigationController pushViewController:importViewController animated:YES];
 }
 
 - (IBAction)save:(id)sender {
+    UILabel * dateLabel = [[UILabel alloc] initWithFrame:self.coupleImageView.frame];
+    CGRect frame = self.dateField.frame;
+    frame.origin.y = frame.origin.y - self.coupleImageView.frame.origin.y;
+    frame.size.width = self.coupleImageView.frame.size.width;
+    [dateLabel setFrame:frame];
+    [dateLabel setText:self.dateField.text];
+    [dateLabel setTextColor:self.dateField.textColor];
+    [dateLabel setFont:self.dateField.font];
+    [dateLabel setTextAlignment:NSTextAlignmentCenter];
+    [dateLabel setContentMode:UIViewContentModeBottom];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:self.coupleImageView.image];
+    [imageView addSubview:dateLabel];
 
+    UIImage * image = [UIView rasterizeView:imageView];
+
+    UIActivityViewController * activityViewController = [[UIActivityViewController alloc] initWithActivityItems: @[image] applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (IBAction)changeImage:(id)sender {

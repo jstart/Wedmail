@@ -7,6 +7,8 @@
 //
 
 #import "CLTConfirmationViewController.h"
+#import <QBFlatButton/QBFlatButton.h>
+#import <UIColor-Utilities/UIColor+Expanded.h>
 
 @interface CLTConfirmationViewController ()
 
@@ -27,6 +29,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)didReceiveMemoryWarning

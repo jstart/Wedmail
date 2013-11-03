@@ -32,18 +32,6 @@
                             <rect key="frame" x="20" y="79" width="280" height="367"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDl-gs-7xM">
-                            <rect key="frame" x="175" y="110" width="109" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Change Image">
-                                <color key="titleColor" red="0.016724561855938243" green="0.0" blue="0.26933195153061229" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="changeImage:" destination="-1" eventType="touchUpInside" id="Jdy-ZA-6H9"/>
-                            </connections>
-                        </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="1.11.14" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWT-Sf-lC6">
                             <rect key="frame" x="25" y="344" width="280" height="102"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -100,8 +88,9 @@
                                 </barButtonItem>
                                 <barButtonItem title="Item" style="plain" id="lbK-Zb-hTI">
                                     <button key="customView" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="400-TC-DAR">
-                                        <rect key="frame" x="221" y="7" width="40" height="30"/>
+                                        <rect key="frame" x="221" y="7" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="tintColor" red="0.99567025265370523" green="0.96779502791304728" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="White"/>
                                         <connections>

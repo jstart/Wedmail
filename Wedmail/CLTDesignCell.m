@@ -7,6 +7,7 @@
 //
 
 #import "CLTDesignCell.h"
+#import <UIColor-Utilities/UIColor+Expanded.h>
 
 @interface CLTDesignCell ()
 
@@ -21,6 +22,15 @@
         // Initialization code
         self.designImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 181)];
         [self addSubview:self.designImageView];
+
+        self.titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 143, 320, 38)];
+        [self.titleImageView setImage:[UIImage imageNamed:@"template_title_bar"]];
+        [self addSubview:self.titleImageView];
+
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 38)];
+        [self.titleLabel setTextColor:[UIColor colorWithHexString:@"565656"]];
+        [self.titleLabel setTextAlignment:NSTextAlignmentRight];
+        [self.titleImageView addSubview:self.titleLabel];
     }
     return self;
 }

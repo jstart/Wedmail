@@ -65,19 +65,21 @@
                         <constraint firstAttribute="height" constant="182" id="krz-Qp-WKy"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Wedmail_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0y0-bD-lGb">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wedmail_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0y0-bD-lGb">
                     <rect key="frame" x="40" y="195" width="252" height="143"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="0y0-bD-lGb" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="40" id="HXq-xr-dJ3"/>
                 <constraint firstAttribute="bottom" secondItem="sZa-Ja-5eX" secondAttribute="bottom" id="IPl-ms-GyD"/>
                 <constraint firstItem="4KF-b4-Dq4" firstAttribute="trailing" secondItem="sZa-Ja-5eX" secondAttribute="trailing" id="LlW-Gr-rJo"/>
                 <constraint firstAttribute="bottom" secondItem="sZa-Ja-5eX" secondAttribute="bottom" id="RVw-I5-iQC"/>
                 <constraint firstItem="4KF-b4-Dq4" firstAttribute="top" secondItem="1" secondAttribute="top" id="WfV-B8-DgS"/>
                 <constraint firstAttribute="bottom" secondItem="sZa-Ja-5eX" secondAttribute="bottom" id="arK-MQ-FIc"/>
                 <constraint firstItem="4KF-b4-Dq4" firstAttribute="leading" secondItem="sZa-Ja-5eX" secondAttribute="leading" id="iaB-U4-rzD"/>
+                <constraint firstItem="sZa-Ja-5eX" firstAttribute="top" secondItem="0y0-bD-lGb" secondAttribute="bottom" constant="48" id="jtl-Cf-TEx"/>
                 <constraint firstItem="sZa-Ja-5eX" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="yKG-UR-C6m"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

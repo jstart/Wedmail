@@ -11,5 +11,7 @@
 @interface CLTDesignCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView * designImageView;
+@property (nonatomic, strong) UIImageView * titleImageView;
+@property (nonatomic, strong) UILabel * titleLabel;
 
 @end

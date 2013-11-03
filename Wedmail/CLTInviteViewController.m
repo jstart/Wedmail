@@ -61,6 +61,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -143,7 +145,7 @@
                 [addressBook requestAuthorizationWithCompletion:^(bool granted, NSError * error){
                     if (granted) {
                         self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:phoneFilterPredicate] mutableCopy];
-                        self.selectedContacts = [NSMutableArray array];
+                        self.selectedContacts = self.contacts;
                         self.filteredContacts = self.contacts;
                         alreadyLoaded = YES;
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -156,7 +158,7 @@
                 }];
             }else{
                 self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:phoneFilterPredicate] mutableCopy];
-                self.selectedContacts = [NSMutableArray array];
+                self.selectedContacts = self.contacts;
                 self.filteredContacts = self.contacts;
                 alreadyLoaded = YES;
                 dispatch_async(dispatch_get_main_queue(), ^{

@@ -66,7 +66,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,8 +76,25 @@
     if (cell == nil) {
         cell = [[CLTDesignCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    NSString * name = nil;
+    switch (indexPath.row) {
+        case 0:
+            name = @"modernity";
+            break;
+        case 1:
+            name = @"hipster";
+            break;
+        case 2:
+            name = @"chic";
+            break;
+        case 3:
+            name = @"forefront";
+            break;
 
-    cell.textLabel.text = @"modernity";
+        default:
+            break;
+    }
+    cell.titleLabel.text = name;
     cell.designImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"design_%d", indexPath.row+1]];
     // Configure the cell...
     
