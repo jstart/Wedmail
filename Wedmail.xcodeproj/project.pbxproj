@@ -19,8 +19,8 @@
 		23A2E9661825CA3D003275D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2E94E1825CA3D003275D4 /* UIKit.framework */; };
 		23A2E96E1825CA3D003275D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E96C1825CA3D003275D4 /* InfoPlist.strings */; };
 		23A2E9701825CA3D003275D4 /* WedmailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E96F1825CA3D003275D4 /* WedmailTests.m */; };
-		23A2E97C1825CCD4003275D4 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E97A1825CCD4003275D4 /* LaunchViewController.m */; };
-		23A2E97D1825CCD4003275D4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E97B1825CCD4003275D4 /* LaunchViewController.xib */; };
+		23A2E97C1825CCD4003275D4 /* CLTLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E97A1825CCD4003275D4 /* CLTLaunchViewController.m */; };
+		23A2E97D1825CCD4003275D4 /* CLTLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E97B1825CCD4003275D4 /* CLTLaunchViewController.xib */; };
 		23A2E9801825D197003275D4 /* Couple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E97F1825D197003275D4 /* Couple@2x.png */; };
 		23A2E9841825D64B003275D4 /* CLTDesignMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9821825D64B003275D4 /* CLTDesignMenuViewController.m */; };
 		23A2E9851825D64B003275D4 /* CLTDesignMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9831825D64B003275D4 /* CLTDesignMenuViewController.xib */; };
@@ -35,6 +35,23 @@
 		23A2E99D182604AF003275D4 /* Gotham-XLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E994182604AF003275D4 /* Gotham-XLightItalic.ttf */; };
 		23A2E9A118260706003275D4 /* CLTCustomizeCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E99F18260706003275D4 /* CLTCustomizeCardViewController.m */; };
 		23A2E9A218260706003275D4 /* CLTCustomizeCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9A018260706003275D4 /* CLTCustomizeCardViewController.xib */; };
+		23A2E9AB18262A72003275D4 /* Us_Sample@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9A918262A72003275D4 /* Us_Sample@2x.png */; };
+		23A2E9AC18262A72003275D4 /* Wedmail_Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9AA18262A72003275D4 /* Wedmail_Logo@2x.png */; };
+		23A2E9B2182637ED003275D4 /* UIApplication+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9B1182637ED003275D4 /* UIApplication+Test.m */; };
+		23A2E9B41826BA40003275D4 /* design_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9B31826BA40003275D4 /* design_1@2x.png */; };
+		23A2E9B81826BAED003275D4 /* CLTDesignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9B71826BAED003275D4 /* CLTDesignCell.m */; };
+		23A2E9BC1826BCB6003275D4 /* design_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9B91826BCB6003275D4 /* design_2@2x.png */; };
+		23A2E9BD1826BCB6003275D4 /* design_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9BA1826BCB6003275D4 /* design_3@2x.png */; };
+		23A2E9BE1826BCB6003275D4 /* design_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9BB1826BCB6003275D4 /* design_4@2x.png */; };
+		23A2E9C11826CB8B003275D4 /* UIImage+Width.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9C01826CB8B003275D4 /* UIImage+Width.m */; };
+		23A2E9C51826CEF5003275D4 /* CLTInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9C31826CEF5003275D4 /* CLTInviteViewController.m */; };
+		23A2E9C61826CEF5003275D4 /* CLTInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9C41826CEF5003275D4 /* CLTInviteViewController.xib */; };
+		23A2E9CA1826D80D003275D4 /* CLTImportAddressesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9C81826D80D003275D4 /* CLTImportAddressesViewController.m */; };
+		23A2E9CB1826D80D003275D4 /* CLTImportAddressesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9C91826D80D003275D4 /* CLTImportAddressesViewController.xib */; };
+		23A2E9CF1826D908003275D4 /* CLTConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9CD1826D908003275D4 /* CLTConfirmationViewController.m */; };
+		23A2E9D01826D908003275D4 /* CLTConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9CE1826D908003275D4 /* CLTConfirmationViewController.xib */; };
+		23A2E9D21826D96A003275D4 /* wedmail_words@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9D11826D96A003275D4 /* wedmail_words@2x.png */; };
+		23A2E9D41826D9F2003275D4 /* wedmail_envelope@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9D31826D9F2003275D4 /* wedmail_envelope@2x.png */; };
 		A27E4FD0B8C14CCD8ED3C3CF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62164AFC133D42FF85ECA590 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,9 +83,9 @@
 		23A2E96B1825CA3D003275D4 /* WedmailTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WedmailTests-Info.plist"; sourceTree = "<group>"; };
 		23A2E96D1825CA3D003275D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		23A2E96F1825CA3D003275D4 /* WedmailTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WedmailTests.m; sourceTree = "<group>"; };
-		23A2E9791825CCD4003275D4 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
-		23A2E97A1825CCD4003275D4 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
-		23A2E97B1825CCD4003275D4 /* LaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		23A2E9791825CCD4003275D4 /* CLTLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTLaunchViewController.h; sourceTree = "<group>"; };
+		23A2E97A1825CCD4003275D4 /* CLTLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTLaunchViewController.m; sourceTree = "<group>"; };
+		23A2E97B1825CCD4003275D4 /* CLTLaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLTLaunchViewController.xib; sourceTree = "<group>"; };
 		23A2E97F1825D197003275D4 /* Couple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Couple@2x.png"; path = "Images/Couple@2x.png"; sourceTree = SOURCE_ROOT; };
 		23A2E9811825D64B003275D4 /* CLTDesignMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTDesignMenuViewController.h; sourceTree = "<group>"; };
 		23A2E9821825D64B003275D4 /* CLTDesignMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTDesignMenuViewController.m; sourceTree = "<group>"; };
@@ -85,6 +102,29 @@
 		23A2E99E18260706003275D4 /* CLTCustomizeCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTCustomizeCardViewController.h; sourceTree = "<group>"; };
 		23A2E99F18260706003275D4 /* CLTCustomizeCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTCustomizeCardViewController.m; sourceTree = "<group>"; };
 		23A2E9A018260706003275D4 /* CLTCustomizeCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLTCustomizeCardViewController.xib; sourceTree = "<group>"; };
+		23A2E9A918262A72003275D4 /* Us_Sample@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Us_Sample@2x.png"; path = "Images/Us_Sample@2x.png"; sourceTree = SOURCE_ROOT; };
+		23A2E9AA18262A72003275D4 /* Wedmail_Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wedmail_Logo@2x.png"; path = "Images/Wedmail_Logo@2x.png"; sourceTree = SOURCE_ROOT; };
+		23A2E9B0182637ED003275D4 /* UIApplication+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Test.h"; sourceTree = "<group>"; };
+		23A2E9B1182637ED003275D4 /* UIApplication+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Test.m"; sourceTree = "<group>"; };
+		23A2E9B31826BA40003275D4 /* design_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "design_1@2x.png"; path = "Images/design_1@2x.png"; sourceTree = SOURCE_ROOT; };
+		23A2E9B61826BAED003275D4 /* CLTDesignCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTDesignCell.h; sourceTree = "<group>"; };
+		23A2E9B71826BAED003275D4 /* CLTDesignCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTDesignCell.m; sourceTree = "<group>"; };
+		23A2E9B91826BCB6003275D4 /* design_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "design_2@2x.png"; path = "Images/design_2@2x.png"; sourceTree = SOURCE_ROOT; };
+		23A2E9BA1826BCB6003275D4 /* design_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "design_3@2x.png"; path = "Images/design_3@2x.png"; sourceTree = SOURCE_ROOT; };
+		23A2E9BB1826BCB6003275D4 /* design_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "design_4@2x.png"; path = "Images/design_4@2x.png"; sourceTree = SOURCE_ROOT; };
+		23A2E9BF1826CB8B003275D4 /* UIImage+Width.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Width.h"; path = "Wedmail/UIImage+Width.h"; sourceTree = "<group>"; };
+		23A2E9C01826CB8B003275D4 /* UIImage+Width.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Width.m"; path = "Wedmail/UIImage+Width.m"; sourceTree = "<group>"; };
+		23A2E9C21826CEF5003275D4 /* CLTInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTInviteViewController.h; sourceTree = "<group>"; };
+		23A2E9C31826CEF5003275D4 /* CLTInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTInviteViewController.m; sourceTree = "<group>"; };
+		23A2E9C41826CEF5003275D4 /* CLTInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLTInviteViewController.xib; sourceTree = "<group>"; };
+		23A2E9C71826D80D003275D4 /* CLTImportAddressesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTImportAddressesViewController.h; sourceTree = "<group>"; };
+		23A2E9C81826D80D003275D4 /* CLTImportAddressesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTImportAddressesViewController.m; sourceTree = "<group>"; };
+		23A2E9C91826D80D003275D4 /* CLTImportAddressesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLTImportAddressesViewController.xib; sourceTree = "<group>"; };
+		23A2E9CC1826D908003275D4 /* CLTConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTConfirmationViewController.h; sourceTree = "<group>"; };
+		23A2E9CD1826D908003275D4 /* CLTConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTConfirmationViewController.m; sourceTree = "<group>"; };
+		23A2E9CE1826D908003275D4 /* CLTConfirmationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLTConfirmationViewController.xib; sourceTree = "<group>"; };
+		23A2E9D11826D96A003275D4 /* wedmail_words@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wedmail_words@2x.png"; sourceTree = "<group>"; };
+		23A2E9D31826D9F2003275D4 /* wedmail_envelope@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wedmail_envelope@2x.png"; path = "Images/wedmail_envelope@2x.png"; sourceTree = SOURCE_ROOT; };
 		62164AFC133D42FF85ECA590 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +156,10 @@
 		23A2E93E1825CA3D003275D4 = {
 			isa = PBXGroup;
 			children = (
+				23A2E9BF1826CB8B003275D4 /* UIImage+Width.h */,
+				23A2E9C01826CB8B003275D4 /* UIImage+Width.m */,
+				23A2E9B0182637ED003275D4 /* UIApplication+Test.h */,
+				23A2E9B1182637ED003275D4 /* UIApplication+Test.m */,
 				23A2E9501825CA3D003275D4 /* Wedmail */,
 				23A2E9691825CA3D003275D4 /* WedmailTests */,
 				23A2E9491825CA3D003275D4 /* Frameworks */,
@@ -148,13 +192,23 @@
 		23A2E9501825CA3D003275D4 /* Wedmail */ = {
 			isa = PBXGroup;
 			children = (
+				23A2E9B51826BA9F003275D4 /* TableCells */,
 				23A2E9891826045A003275D4 /* Fonts */,
 				23A2E97E1825D189003275D4 /* Images */,
 				23A2E9591825CA3D003275D4 /* CLTAppDelegate.h */,
 				23A2E95A1825CA3D003275D4 /* CLTAppDelegate.m */,
-				23A2E9791825CCD4003275D4 /* LaunchViewController.h */,
-				23A2E97A1825CCD4003275D4 /* LaunchViewController.m */,
-				23A2E97B1825CCD4003275D4 /* LaunchViewController.xib */,
+				23A2E9C21826CEF5003275D4 /* CLTInviteViewController.h */,
+				23A2E9C31826CEF5003275D4 /* CLTInviteViewController.m */,
+				23A2E9C41826CEF5003275D4 /* CLTInviteViewController.xib */,
+				23A2E9C71826D80D003275D4 /* CLTImportAddressesViewController.h */,
+				23A2E9C81826D80D003275D4 /* CLTImportAddressesViewController.m */,
+				23A2E9C91826D80D003275D4 /* CLTImportAddressesViewController.xib */,
+				23A2E9CC1826D908003275D4 /* CLTConfirmationViewController.h */,
+				23A2E9CD1826D908003275D4 /* CLTConfirmationViewController.m */,
+				23A2E9CE1826D908003275D4 /* CLTConfirmationViewController.xib */,
+				23A2E9791825CCD4003275D4 /* CLTLaunchViewController.h */,
+				23A2E97A1825CCD4003275D4 /* CLTLaunchViewController.m */,
+				23A2E97B1825CCD4003275D4 /* CLTLaunchViewController.xib */,
 				23A2E95C1825CA3D003275D4 /* Images.xcassets */,
 				23A2E9811825D64B003275D4 /* CLTDesignMenuViewController.h */,
 				23A2E9821825D64B003275D4 /* CLTDesignMenuViewController.m */,
@@ -199,6 +253,14 @@
 		23A2E97E1825D189003275D4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				23A2E9D31826D9F2003275D4 /* wedmail_envelope@2x.png */,
+				23A2E9D11826D96A003275D4 /* wedmail_words@2x.png */,
+				23A2E9B31826BA40003275D4 /* design_1@2x.png */,
+				23A2E9B91826BCB6003275D4 /* design_2@2x.png */,
+				23A2E9BA1826BCB6003275D4 /* design_3@2x.png */,
+				23A2E9BB1826BCB6003275D4 /* design_4@2x.png */,
+				23A2E9A918262A72003275D4 /* Us_Sample@2x.png */,
+				23A2E9AA18262A72003275D4 /* Wedmail_Logo@2x.png */,
 				23A2E97F1825D197003275D4 /* Couple@2x.png */,
 			);
 			name = Images;
@@ -218,6 +280,15 @@
 				23A2E98A1826045A003275D4 /* GothamMedium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		23A2E9B51826BA9F003275D4 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				23A2E9B61826BAED003275D4 /* CLTDesignCell.h */,
+				23A2E9B71826BAED003275D4 /* CLTDesignCell.m */,
+			);
+			name = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,21 +369,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23A2E97D1825CCD4003275D4 /* LaunchViewController.xib in Resources */,
+				23A2E97D1825CCD4003275D4 /* CLTLaunchViewController.xib in Resources */,
 				23A2E9551825CA3D003275D4 /* InfoPlist.strings in Resources */,
+				23A2E9B41826BA40003275D4 /* design_1@2x.png in Resources */,
 				23A2E99D182604AF003275D4 /* Gotham-XLightItalic.ttf in Resources */,
+				23A2E9D41826D9F2003275D4 /* wedmail_envelope@2x.png in Resources */,
 				23A2E99C182604AF003275D4 /* Gotham-XLight.ttf in Resources */,
 				23A2E996182604AF003275D4 /* Gotham-BlackItalic.ttf in Resources */,
 				23A2E9801825D197003275D4 /* Couple@2x.png in Resources */,
+				23A2E9D01826D908003275D4 /* CLTConfirmationViewController.xib in Resources */,
 				23A2E98B1826045A003275D4 /* GothamMedium.ttf in Resources */,
 				23A2E95D1825CA3D003275D4 /* Images.xcassets in Resources */,
+				23A2E9D21826D96A003275D4 /* wedmail_words@2x.png in Resources */,
+				23A2E9AB18262A72003275D4 /* Us_Sample@2x.png in Resources */,
 				23A2E999182604AF003275D4 /* Gotham-BookItalic.ttf in Resources */,
 				23A2E997182604AF003275D4 /* Gotham-Bold.ttf in Resources */,
 				23A2E9A218260706003275D4 /* CLTCustomizeCardViewController.xib in Resources */,
 				23A2E998182604AF003275D4 /* Gotham-Book.ttf in Resources */,
 				23A2E99A182604AF003275D4 /* Gotham-Light.ttf in Resources */,
 				23A2E995182604AF003275D4 /* Gotham-Black.ttf in Resources */,
+				23A2E9BD1826BCB6003275D4 /* design_3@2x.png in Resources */,
+				23A2E9C61826CEF5003275D4 /* CLTInviteViewController.xib in Resources */,
+				23A2E9BE1826BCB6003275D4 /* design_4@2x.png in Resources */,
+				23A2E9AC18262A72003275D4 /* Wedmail_Logo@2x.png in Resources */,
+				23A2E9CB1826D80D003275D4 /* CLTImportAddressesViewController.xib in Resources */,
 				23A2E9851825D64B003275D4 /* CLTDesignMenuViewController.xib in Resources */,
+				23A2E9BC1826BCB6003275D4 /* design_2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,11 +446,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A2E9B2182637ED003275D4 /* UIApplication+Test.m in Sources */,
+				23A2E9C51826CEF5003275D4 /* CLTInviteViewController.m in Sources */,
 				23A2E95B1825CA3D003275D4 /* CLTAppDelegate.m in Sources */,
 				23A2E9841825D64B003275D4 /* CLTDesignMenuViewController.m in Sources */,
 				23A2E9A118260706003275D4 /* CLTCustomizeCardViewController.m in Sources */,
+				23A2E9CF1826D908003275D4 /* CLTConfirmationViewController.m in Sources */,
 				23A2E9571825CA3D003275D4 /* main.m in Sources */,
-				23A2E97C1825CCD4003275D4 /* LaunchViewController.m in Sources */,
+				23A2E9CA1826D80D003275D4 /* CLTImportAddressesViewController.m in Sources */,
+				23A2E9B81826BAED003275D4 /* CLTDesignCell.m in Sources */,
+				23A2E9C11826CB8B003275D4 /* UIImage+Width.m in Sources */,
+				23A2E97C1825CCD4003275D4 /* CLTLaunchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -454,7 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

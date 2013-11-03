@@ -7,9 +7,11 @@
 //
 
 #import "CLTAppDelegate.h"
-#import "LaunchViewController.h"
-
+#import "CLTLaunchViewController.h"
+#import "UIApplication+Test.h"
 #import <UIColor-Utilities/UIColor+Expanded.h>
+#import <Pinterest/Pinterest.h>
+#import <DCIntrospect/DCIntrospect.h>
 
 @implementation CLTAppDelegate
 
@@ -17,16 +19,22 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-
-    LaunchViewController * launchViewController = [[LaunchViewController alloc] init];
+    Pinterest * pinterest = [[Pinterest alloc] initWithClientId:@"1433851"];
+    [pinterest createPinWithImageURL:[NSURL URLWithString:@"http://t1.gstatic.com/images?q=tbn:ANd9GcSgQ514WJgn8Rf6kI-hWoHsob2u2dhauj5AQNKyiFRa9F4RLYLokw"] sourceURL:[NSURL URLWithString:@"http://sitmeanssit.com/dog-training-mu/houston-dog-training/puppy-classes/"] description:@"Cool pin bro"];
+    CLTLaunchViewController * launchViewController = [[CLTLaunchViewController alloc] init];
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:launchViewController];
     [navigationController setNavigationBarHidden:YES];
-
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"bcd756"]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"Gotham" size:18]}];
 
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
+
+#if TARGET_IPHONE_SIMULATOR
+    [[DCIntrospect sharedIntrospector] start];
+#endif 
     return YES;
 }
 

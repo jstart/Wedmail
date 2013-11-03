@@ -1,20 +1,22 @@
 //
-//  LaunchViewController.m
+//  CLTLaunchViewController.m
 //  Wedmail
 //
-//
+//  Created by Christopher Truman on 11/2/13.
+//  Copyright (c) 2013 truman. All rights reserved.
 //
 
-#import "LaunchViewController.h"
+#import "CLTLaunchViewController.h"
 #import "CLTDesignMenuViewController.h"
 
 #import <UIColor-Utilities/UIColor+Expanded.h>
 
-@interface LaunchViewController ()
+@interface CLTLaunchViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *introTextLabel;
 
 @end
 
-@implementation LaunchViewController
+@implementation CLTLaunchViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"";
 
     // Do any additional setup after loading the view from its nib.
     [self.view setBackgroundColor:[UIColor colorWithWhite:0.945 alpha:1.000]];
@@ -35,7 +38,8 @@
     [self.getStartedButton setDepth:2.0];
     [self.getStartedButton setFaceColor:[UIColor colorWithHexString:@"bcd756"]];
     [self.getStartedButton setSideColor:[UIColor colorWithHexString:@"8faa2b"]];
-    [self.getStartedButton.titleLabel setFont:[UIFont fontWithName:@"Gotham-Medium" size:15]];
+    [self.getStartedButton.titleLabel setFont:[UIFont fontWithName:@"Gotham" size:15]];
+//    [self.introTextLabel setFont:[UIFont fontWithName:@"Gotham" size:15]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

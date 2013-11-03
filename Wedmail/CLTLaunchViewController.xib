@@ -5,9 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CLTLaunchViewController">
             <connections>
                 <outlet property="getStartedButton" destination="i9l-Ju-qF3" id="2rL-ma-Dcd"/>
+                <outlet property="introTextLabel" destination="143" id="UzA-Bx-uUp"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -28,18 +29,19 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="143">
-                            <rect key="frame" x="20" y="3" width="280" height="59"/>
+                            <rect key="frame" x="20" y="3" width="280" height="68"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Ready to make and send your Save the Date?      We promise it will be quick and easy!</string>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <string key="text">Ready to make and send your Save the Date?
+      We promise it will be quick and easy!</string>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" red="0.47118144132653061" green="0.47118144132653061" blue="0.47118144132653061" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9l-Ju-qF3" customClass="QBFlatButton">
-                            <rect key="frame" x="70" y="70" width="180" height="42"/>
+                            <rect key="frame" x="45" y="70" width="230" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="42" id="kIx-iV-Y4j"/>
+                                <constraint firstAttribute="height" constant="49" id="kIx-iV-Y4j"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                             <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -54,8 +56,8 @@
                     <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="143" firstAttribute="leading" secondItem="sZa-Ja-5eX" secondAttribute="leading" constant="20" symbolic="YES" id="48R-pP-eXn"/>
-                        <constraint firstItem="i9l-Ju-qF3" firstAttribute="top" secondItem="143" secondAttribute="bottom" constant="8" symbolic="YES" id="9tl-KD-ZY1"/>
-                        <constraint firstItem="i9l-Ju-qF3" firstAttribute="leading" secondItem="sZa-Ja-5eX" secondAttribute="leading" constant="70" id="LX5-QI-YPI"/>
+                        <constraint firstItem="i9l-Ju-qF3" firstAttribute="top" secondItem="143" secondAttribute="bottom" constant="-1" id="9tl-KD-ZY1"/>
+                        <constraint firstItem="i9l-Ju-qF3" firstAttribute="leading" secondItem="sZa-Ja-5eX" secondAttribute="leading" constant="45" id="LX5-QI-YPI"/>
                         <constraint firstItem="143" firstAttribute="centerX" secondItem="i9l-Ju-qF3" secondAttribute="centerX" id="a1N-1X-JKk"/>
                         <constraint firstItem="143" firstAttribute="top" secondItem="sZa-Ja-5eX" secondAttribute="top" constant="3" id="eee-bb-lzv"/>
                         <constraint firstItem="i9l-Ju-qF3" firstAttribute="top" secondItem="sZa-Ja-5eX" secondAttribute="top" constant="70" id="h8k-Dz-gqN"/>
@@ -63,6 +65,10 @@
                         <constraint firstAttribute="height" constant="182" id="krz-Qp-WKy"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Wedmail_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0y0-bD-lGb">
+                    <rect key="frame" x="40" y="195" width="252" height="143"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -80,5 +86,6 @@
     </objects>
     <resources>
         <image name="Couple.png" width="320" height="386"/>
+        <image name="Wedmail_Logo.png" width="252" height="143"/>
     </resources>
 </document>
