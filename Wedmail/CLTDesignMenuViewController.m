@@ -95,7 +95,7 @@
             break;
     }
     cell.titleLabel.text = name;
-    cell.designImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"design_%d", indexPath.row+1]];
+    cell.designImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"design_%ld", indexPath.row+1]];
     // Configure the cell...
     
     return cell;

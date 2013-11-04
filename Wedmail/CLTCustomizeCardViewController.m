@@ -119,7 +119,7 @@
     BOOL isNewlyTaken = (info[UIImagePickerControllerReferenceURL] == nil);
 
     if (isNewlyTaken){
-        UIImage *image = info[UIImagePickerControllerOriginalImage];
+//        UIImage *image = info[UIImagePickerControllerOriginalImage];
     }
     UIImage * scaledImage = [UIImage imageWithImage:info[UIImagePickerControllerOriginalImage] scaledToWidth:367];
     [self.coupleImageView setImage:scaledImage];

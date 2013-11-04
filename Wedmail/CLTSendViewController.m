@@ -74,7 +74,7 @@
                     self.selectedContacts = [NSMutableArray array];
                     self.filteredContacts = self.contacts;
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.addressCountLabel setText:[NSString stringWithFormat:@"%d", self.contacts.count]];
+                        [self.addressCountLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)self.contacts.count]];
                     });
                 } else {
                     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can't access contacts" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -87,7 +87,7 @@
             self.selectedContacts = [NSMutableArray array];
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.addressCountLabel setText:[NSString stringWithFormat:@"%d", self.contacts.count]];
+                [self.addressCountLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)self.contacts.count]];
             });
         }
     });
