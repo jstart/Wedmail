@@ -9,6 +9,13 @@ pod 'UIColor-Utilities'
 pod 'TPKeyboardAvoiding'
 pod 'SAMHUDView', '~> 0.1.2'
 pod 'RHAddressBook'
+pod 'SGNavigationProgress'
+pod 'vfrReader', '~> 2.6.2'
 
+pod 'Stripe', :git => 'https://github.com/stripe/stripe-ios.git'
+pod 'Braintree', :git => 'https://github.com/braintree/braintree_ios.git'
+pod 'CardIO', '~> 3.4.0'
+
+pod 'TestFlightSDK'
 #pod 'DCIntrospect'
 

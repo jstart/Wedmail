@@ -8,10 +8,12 @@
 
 #import "CLTAppDelegate.h"
 #import "CLTLaunchViewController.h"
+#import "CLTIPADMainViewController.h"
 #import "UIApplication+Test.h"
 #import <UIColor-Utilities/UIColor+Expanded.h>
 //#import <Pinterest/Pinterest.h>
 //#import <DCIntrospect/DCIntrospect.h>
+#import <TestFlightSDK/TestFlight.h>
 
 @implementation CLTAppDelegate
 
@@ -19,16 +21,26 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [TestFlight takeOff:@"a46c67e3-e58a-4586-a9ba-8a35c92cb54a"];
+
 //    Pinterest * pinterest = [[Pinterest alloc] initWithClientId:@"1433851"];
 //    [pinterest createPinWithImageURL:[NSURL URLWithString:@"http://t1.gstatic.com/images?q=tbn:ANd9GcSgQ514WJgn8Rf6kI-hWoHsob2u2dhauj5AQNKyiFRa9F4RLYLokw"] sourceURL:[NSURL URLWithString:@"http://sitmeanssit.com/dog-training-mu/houston-dog-training/puppy-classes/"] description:@"Cool pin bro"];
-    CLTLaunchViewController * launchViewController = [[CLTLaunchViewController alloc] init];
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:launchViewController];
-    [navigationController setNavigationBarHidden:YES];
+
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"bcd756"]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"Gotham" size:18]}];
 
-    self.window.rootViewController = navigationController;
+    UIViewController * launchViewController = nil;
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
+        launchViewController = [[CLTLaunchViewController alloc] init];
+        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:launchViewController];
+        [navigationController setNavigationBarHidden:YES];
+        self.window.rootViewController = navigationController;
+         }
+    else{
+         launchViewController = [[CLTIPADMainViewController alloc] init];
+         self.window.rootViewController = launchViewController;
+    }
 
     [self.window makeKeyAndVisible];
 

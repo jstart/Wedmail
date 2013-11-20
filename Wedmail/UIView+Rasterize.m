@@ -10,21 +10,23 @@
 
 @implementation UIView (Rasterize)
 
-+(UIImage*) rasterizeView: (UIView*) object
++(UIImage*) rasterizeView: (UIView*) view
 {
-    UIGraphicsBeginImageContextWithOptions(object.frame.size, YES, [UIScreen mainScreen].scale);
-    [object.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0);
+
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     //now that we are done we return this image back,
     return viewImage;
 }
 
-+(UIImage*) rasterizeView: (UIView*) object andView:(UIView *)otherObject
++(UIImage*) rasterizeView: (UIView*) view andView:(UIView *)otherView
 {
-    UIGraphicsBeginImageContextWithOptions(object.frame.size, YES, [UIScreen mainScreen].scale);
-    [object.layer renderInContext:UIGraphicsGetCurrentContext()];
-    [otherObject.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, YES, [UIScreen mainScreen].scale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [otherView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     //now that we are done we return this image back,

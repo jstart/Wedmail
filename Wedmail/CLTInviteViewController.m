@@ -7,23 +7,21 @@
 //
 
 #import "CLTInviteViewController.h"
+#import "CLTAddressCell.h"
 
-
-#import "AddressBook.h"
+#import <RHAddressBook/AddressBook.h>
 #import <UIColor-Utilities/UIColor+Expanded.h>
 #import <MessageUI/MessageUI.h>
 #import <SAMHUDView/SAMHUDView.h>
 
-@interface CLTInviteViewController () <MFMessageComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>{
-
-    RHAddressBook * addressBook;
+@interface CLTInviteViewController () <UITableViewDataSource, UITableViewDelegate>{
     BOOL alreadyLoaded;
 }
+
 @property (nonatomic, strong) NSMutableArray * currentContacts;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *contactSegmentedControl;
-@property (nonatomic, strong) NSMutableArray *contacts;
+@property (nonatomic, strong) NSArray *contacts;
 @property (nonatomic, strong) NSMutableArray *selectedContacts;
-@property (nonatomic, strong) NSArray *filteredContacts;
 
 @end
 
@@ -39,10 +37,10 @@
 //        UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
 //        self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
-//        UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
-//        UIBarButtonItem * searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+        UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithTitle:@"Unselect All" style:UIBarButtonItemStylePlain target:self action:@selector(selectAll)];
+        //        UIBarButtonItem * searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
 //
-//        self.navigationItem.rightBarButtonItems = @[addButton, searchButton];
+        self.navigationItem.rightBarButtonItems = @[addButton];
 
     }
     return self;
@@ -76,22 +74,30 @@
     [hudView show];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSPredicate * phoneFilterPredicate = [NSPredicate predicateWithBlock:^(id evaluatedObject, NSDictionary * bindings){
+        NSPredicate * addressFilterPredicate = [NSPredicate predicateWithBlock:^(id evaluatedObject, NSDictionary * bindings){
             RHPerson * person = evaluatedObject;
-            if (person.phoneNumbers.count > 0) {
-                return YES;
+            if ([person isOrganization]) {
+                return NO;
+            }
+
+            if (person.addresses.count > 0) {
+                NSString * street = [person.addresses valueAtIndex:0][@"Street"];
+                NSString * name = [person compositeName];
+                if (street && name) {
+                    return YES;
+                }
             }else{
                 return NO;
             }
+            return NO;
         }];
 
         if ([RHAddressBook authorizationStatus] == RHAuthorizationStatusNotDetermined){
-            addressBook = [[RHAddressBook alloc] init];
-            [addressBook requestAuthorizationWithCompletion:^(bool granted, NSError * error){
+            self.addressBook = self.addressBook ? self.addressBook : [[RHAddressBook alloc] init];
+            [_addressBook requestAuthorizationWithCompletion:^(bool granted, NSError * error){
                 if (granted) {
-                    self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:phoneFilterPredicate] mutableCopy];
-                    self.selectedContacts = [NSMutableArray array];
-                    self.filteredContacts = self.contacts;
+                    self.contacts = [[[_addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:addressFilterPredicate] copy];
+                    self.selectedContacts = [self.contacts mutableCopy];
                     alreadyLoaded = YES;
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [hudView completeAndDismissWithTitle:@"Loaded Contacts"];
@@ -102,10 +108,9 @@
                 }
             }];
         }else{
-            addressBook = [[RHAddressBook alloc] init];
-            self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:phoneFilterPredicate] mutableCopy];
-            self.selectedContacts = [NSMutableArray array];
-            self.filteredContacts = self.contacts;
+            self.addressBook = self.addressBook ? self.addressBook : [[RHAddressBook alloc] init];
+            self.contacts = [[[_addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:addressFilterPredicate] copy];
+            self.selectedContacts = [self.contacts mutableCopy];
             alreadyLoaded = YES;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [hudView completeAndDismissWithTitle:@"Loaded Contacts"];
@@ -113,7 +118,18 @@
             });
         }
     });
+}
 
+-(void)selectAll{
+    if (self.contacts.count == self.selectedContacts.count) {
+        [self.navigationItem.rightBarButtonItem setTitle:@"Select All"];
+        self.selectedContacts = [NSMutableArray array];
+        [[self tableView] reloadData];
+    }else{
+        self.selectedContacts = [self.contacts mutableCopy];
+        [self.navigationItem.rightBarButtonItem setTitle:@"Unselect All"];
+        [[self tableView] reloadData];
+    }
 }
 
 -(void)add{
@@ -124,110 +140,23 @@
 
 }
 
-- (IBAction)segmentChanged:(id)sender {
-    UISegmentedControl * segmentedControl = sender;
-    if (segmentedControl.selectedSegmentIndex == 0) {
-        SAMHUDView * hudView = [[SAMHUDView alloc] initWithTitle:@"Loading Contacts" loading:YES];
-        [hudView show];
-
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSPredicate * phoneFilterPredicate = [NSPredicate predicateWithBlock:^(id evaluatedObject, NSDictionary * bindings){
-                RHPerson * person = evaluatedObject;
-                if (person.phoneNumbers.count > 0) {
-                    return YES;
-                }else{
-                    return NO;
-                }
-            }];
-
-            if ([RHAddressBook authorizationStatus] == RHAuthorizationStatusNotDetermined){
-                addressBook = [[RHAddressBook alloc] init];
-                [addressBook requestAuthorizationWithCompletion:^(bool granted, NSError * error){
-                    if (granted) {
-                        self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:phoneFilterPredicate] mutableCopy];
-                        self.selectedContacts = self.contacts;
-                        self.filteredContacts = self.contacts;
-                        alreadyLoaded = YES;
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [hudView completeAndDismissWithTitle:@"Loaded Contacts"];
-                            [self.tableView reloadData];
-                        });
-                    } else {
-                        [hudView failAndDismissWithTitle:@"Can't Access Contacts"];
-                    }
-                }];
-            }else{
-                self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:phoneFilterPredicate] mutableCopy];
-                self.selectedContacts = self.contacts;
-                self.filteredContacts = self.contacts;
-                alreadyLoaded = YES;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [hudView completeAndDismissWithTitle:@"Loaded Contacts"];
-                    [self.tableView reloadData];
-                });
-            }
-        });
-
-    }else{
-        SAMHUDView * hudView = [[SAMHUDView alloc] initWithTitle:@"Loading Contacts" loading:YES];
-        [hudView show];
-
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSPredicate * emailFilterPredicate = [NSPredicate predicateWithBlock:^(id evaluatedObject, NSDictionary * bindings){
-                RHPerson * person = evaluatedObject;
-                if (person.emails.count > 0) {
-                    return YES;
-                }else{
-                    return NO;
-                }
-            }];
-
-            if ([RHAddressBook authorizationStatus] == RHAuthorizationStatusNotDetermined){
-                addressBook = [[RHAddressBook alloc] init];
-                [addressBook requestAuthorizationWithCompletion:^(bool granted, NSError * error){
-                    if (granted) {
-                        self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:emailFilterPredicate] mutableCopy];
-                        self.selectedContacts = [NSMutableArray array];
-                        self.filteredContacts = self.contacts;
-                        alreadyLoaded = YES;
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [hudView completeAndDismissWithTitle:@"Loaded Contacts"];
-                            [self.tableView reloadData];
-                        });
-                    } else {
-                        [hudView failAndDismissWithTitle:@"Can't Access Contacts"];
-                    }
-                }];
-            }else{
-                self.contacts = [[[addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:emailFilterPredicate] mutableCopy];
-                self.selectedContacts = [NSMutableArray array];
-                self.filteredContacts = self.contacts;
-                alreadyLoaded = YES;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [hudView completeAndDismissWithTitle:@"Loaded Contacts"];
-                    [self.tableView reloadData];
-                });
-            }
-        });
-
-    }
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = @"ContactCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"ContactCell";
+    [self.tableView registerNib:[UINib nibWithNibName:@"CLTAddressCell"
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:cellIdentifier];
+    CLTAddressCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[CLTAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    RHPerson * contact = ((RHPerson *)[self.filteredContacts objectAtIndex:indexPath.row]);
-    cell.textLabel.text = contact.compositeName;
+    RHPerson * person = ((RHPerson *)[self.contacts objectAtIndex:indexPath.row]);
+    [cell configureWithPerson:person];
     
-    if ([self.selectedContacts containsObject:[self.filteredContacts objectAtIndex:indexPath.row]]){
+    if ([self.selectedContacts containsObject:[self.contacts objectAtIndex:indexPath.row]]){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -241,7 +170,7 @@
 
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    RHPerson *contact = [self.filteredContacts objectAtIndex:indexPath.row];
+    RHPerson *contact = [self.contacts objectAtIndex:indexPath.row];
     
     if ([self.selectedContacts containsObject:contact]){
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -251,9 +180,18 @@
         [self.selectedContacts addObject:contact];
     }
 
-        [self sendInvitesToContacts:@[contact]];
-        self.filteredContacts = self.contacts;
-        [self.tableView reloadData];
+    if (self.contacts.count == self.selectedContacts.count) {
+        [self.navigationItem.rightBarButtonItem setTitle:@"Unselect All"];
+    }else{
+        [self.navigationItem.rightBarButtonItem setTitle:@"Select All"];
+    }
+
+    [self sendInvitesToContacts:@[contact]];
+    [self.tableView reloadData];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 75.0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -279,15 +217,6 @@
 }
 
 -(void)sendInvitesToContacts:(NSArray*)contacts{
-}
-
-- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    if (result == MessageComposeResultCancelled) {
-        [self.selectedContacts removeObject:[self.selectedContacts lastObject]];
-        [self.tableView reloadData];
-    }else if(result == MessageComposeResultSent) {
-    }
 }
 
 - (void)viewDidUnload {

@@ -10,7 +10,7 @@
 
 @interface UIView (Rasterize)
 
-+(UIImage*) rasterizeView: (UIView*) object;
-+(UIImage*) rasterizeView: (UIView*) object andView:(UIView *)otherObject;
++(UIImage*) rasterizeView: (UIView*) view;
++(UIImage*) rasterizeView: (UIView*) view andView:(UIView *)otherView;
 
 @end

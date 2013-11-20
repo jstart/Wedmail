@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Width)
-+(UIImage*)imageWithImage: (UIImage*) sourceImage scaledToWidth: (float) i_width;
+-(UIImage*)imageScaledToWidth: (float) i_width;
 @end

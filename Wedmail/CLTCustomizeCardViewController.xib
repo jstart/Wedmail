@@ -6,14 +6,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CLTCustomizeCardViewController">
             <connections>
+                <outlet property="backButton" destination="Zn0-7f-SSe" id="9Pe-gB-07i"/>
                 <outlet property="blackButton" destination="MKu-Co-0Qo" id="5IW-n2-Nhp"/>
                 <outlet property="colorToolbar" destination="gcI-7F-ODM" id="Zbb-s2-cm3"/>
                 <outlet property="coupleImageView" destination="y2s-uj-hu5" id="FZS-Gx-loY"/>
                 <outlet property="dateField" destination="QWT-Sf-lC6" id="enK-Jj-zOs"/>
                 <outlet property="greyButton" destination="Ybu-eM-uoe" id="WGu-eh-GuP"/>
+                <outlet property="imageScrollView" destination="rui-sx-7iM" id="xQE-Hd-JFU"/>
                 <outlet property="nextButton" destination="ybA-9Q-6hu" id="LtB-90-eg3"/>
                 <outlet property="purpleButton" destination="93A-S8-QtI" id="ahO-Am-aB0"/>
-                <outlet property="saveButton" destination="Zn0-7f-SSe" id="mIz-WC-VW6"/>
                 <outlet property="scrollView" destination="tNQ-3O-piL" id="iQ0-Dx-Ywp"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="whiteButton" destination="400-TC-DAR" id="2Ic-gu-KqX"/>
@@ -21,25 +22,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-3O-piL" customClass="TPKeyboardAvoidingScrollView">
-                    <rect key="frame" x="0.0" y="-64" width="320" height="632"/>
+                    <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Us_Sample.png" translatesAutoresizingMaskIntoConstraints="NO" id="y2s-uj-hu5">
-                            <rect key="frame" x="20" y="79" width="280" height="367"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="1.11.14" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWT-Sf-lC6">
-                            <rect key="frame" x="25" y="344" width="280" height="102"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="80"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcI-7F-ODM">
+                        <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcI-7F-ODM">
                             <rect key="frame" x="20" y="446" width="280" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
@@ -103,18 +93,18 @@
                                 </barButtonItem>
                             </items>
                         </toolbar>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-7f-SSe" customClass="QBFlatButton">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-7f-SSe" customClass="QBFlatButton">
                             <rect key="frame" x="20" y="513" width="100" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="4Wz-Ep-rVn"/>
                                 <constraint firstAttribute="width" constant="100" id="JhP-W2-aSP"/>
                             </constraints>
-                            <state key="normal" title="Save">
+                            <state key="normal" title="Back">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="save:" destination="-1" eventType="touchUpInside" id="Q5N-Wn-1fq"/>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="gaM-YR-XLG"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybA-9Q-6hu" customClass="QBFlatButton">
@@ -123,19 +113,46 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="o9b-is-sfb"/>
                             </constraints>
-                            <state key="normal" title="Next">
+                            <state key="normal" title="Pick Image">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="next:" destination="-1" eventType="touchUpInside" id="lhk-fh-ocF"/>
                             </connections>
                         </button>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" minimumZoomScale="0.90000000000000002" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="rui-sx-7iM">
+                            <rect key="frame" x="20" y="64" width="280" height="387"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Us_Sample.png" translatesAutoresizingMaskIntoConstraints="NO" id="y2s-uj-hu5">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="387"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.87058823529999996" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="uoB-SN-eFh"/>
+                            </connections>
+                        </scrollView>
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="1.11.14" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWT-Sf-lC6">
+                            <rect key="frame" x="25" y="344" width="280" height="102"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="102" id="joM-SP-YgJ"/>
+                            </constraints>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="80"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="ckd-UU-pop"/>
+                            </connections>
+                        </textField>
                     </subviews>
                     <constraints>
                         <constraint firstItem="Zn0-7f-SSe" firstAttribute="top" secondItem="gcI-7F-ODM" secondAttribute="bottom" constant="23" id="3Jf-ec-IWK"/>
-                        <constraint firstItem="Zn0-7f-SSe" firstAttribute="leading" secondItem="y2s-uj-hu5" secondAttribute="leading" id="4ut-6q-IQV"/>
                         <constraint firstItem="QWT-Sf-lC6" firstAttribute="leading" secondItem="tNQ-3O-piL" secondAttribute="leading" constant="25" id="8Gq-6h-8hG"/>
-                        <constraint firstItem="y2s-uj-hu5" firstAttribute="bottom" secondItem="gcI-7F-ODM" secondAttribute="top" id="Fc2-yp-IHQ"/>
+                        <constraint firstItem="QWT-Sf-lC6" firstAttribute="bottom" secondItem="gcI-7F-ODM" secondAttribute="top" id="8V2-wl-HLC"/>
+                        <constraint firstItem="rui-sx-7iM" firstAttribute="top" secondItem="tNQ-3O-piL" secondAttribute="top" constant="64" id="ADz-OR-zx6"/>
                         <constraint firstAttribute="trailing" secondItem="ybA-9Q-6hu" secondAttribute="trailing" constant="20" symbolic="YES" id="Hnx-Ry-nnO"/>
                         <constraint firstItem="Zn0-7f-SSe" firstAttribute="leading" secondItem="tNQ-3O-piL" secondAttribute="leading" constant="20" symbolic="YES" id="Jx2-ip-T0H"/>
                         <constraint firstItem="Zn0-7f-SSe" firstAttribute="top" secondItem="ybA-9Q-6hu" secondAttribute="top" id="KOj-0j-LJw"/>
@@ -144,11 +161,11 @@
                         <constraint firstItem="ybA-9Q-6hu" firstAttribute="trailing" secondItem="gcI-7F-ODM" secondAttribute="trailing" id="VY3-ij-luv"/>
                         <constraint firstItem="Zn0-7f-SSe" firstAttribute="bottom" secondItem="ybA-9Q-6hu" secondAttribute="bottom" id="X5Q-Xm-xI6"/>
                         <constraint firstItem="Zn0-7f-SSe" firstAttribute="top" secondItem="tNQ-3O-piL" secondAttribute="top" constant="513" id="as0-gE-Hle"/>
+                        <constraint firstItem="rui-sx-7iM" firstAttribute="trailing" secondItem="gcI-7F-ODM" secondAttribute="trailing" id="b85-K2-l8g"/>
                         <constraint firstItem="ybA-9Q-6hu" firstAttribute="leading" secondItem="Zn0-7f-SSe" secondAttribute="trailing" constant="80" id="gof-jI-id3"/>
                         <constraint firstAttribute="trailing" secondItem="QWT-Sf-lC6" secondAttribute="trailing" constant="15" id="hWb-vs-nol"/>
-                        <constraint firstItem="ybA-9Q-6hu" firstAttribute="trailing" secondItem="y2s-uj-hu5" secondAttribute="trailing" id="joM-pS-ytY"/>
-                        <constraint firstItem="y2s-uj-hu5" firstAttribute="top" secondItem="QWT-Sf-lC6" secondAttribute="top" constant="-265" id="mOE-kz-YzG"/>
-                        <constraint firstItem="y2s-uj-hu5" firstAttribute="bottom" secondItem="QWT-Sf-lC6" secondAttribute="bottom" id="xhi-Xg-Opx"/>
+                        <constraint firstItem="QWT-Sf-lC6" firstAttribute="bottom" secondItem="rui-sx-7iM" secondAttribute="bottom" constant="-5" id="u8Z-v8-yGl"/>
+                        <constraint firstItem="rui-sx-7iM" firstAttribute="leading" secondItem="gcI-7F-ODM" secondAttribute="leading" id="xhP-cc-Xa6"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -160,7 +177,7 @@
                 <constraint firstItem="tNQ-3O-piL" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="zN7-pN-IFD"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

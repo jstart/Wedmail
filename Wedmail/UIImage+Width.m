@@ -9,16 +9,16 @@
 #import "UIImage+Width.h"
 
 @implementation UIImage (Width)
-+(UIImage*)imageWithImage: (UIImage*) sourceImage scaledToWidth: (float) i_width
+-(UIImage*)imageScaledToWidth: (float) i_width
 {
-    float oldWidth = sourceImage.size.width;
+    float oldWidth = self.size.width;
     float scaleFactor = i_width / oldWidth;
 
-    float newHeight = sourceImage.size.height * scaleFactor;
+    float newHeight = self.size.height * scaleFactor;
     float newWidth = oldWidth * scaleFactor;
 
-    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
-    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(newWidth, newHeight), YES, 2.5);
+    [self drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;

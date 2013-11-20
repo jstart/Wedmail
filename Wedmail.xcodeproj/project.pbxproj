@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2384DEA7183B1CD8002F6AF3 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2384DEA6183B1CD8002F6AF3 /* Images-2.xcassets */; };
+		2384DEA9183B2609002F6AF3 /* intro_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2384DEA8183B2609002F6AF3 /* intro_text@2x.png */; };
+		2384DEAC183C2095002F6AF3 /* CLTAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2384DEAB183C2095002F6AF3 /* CLTAddressCell.m */; };
+		2384DEAF183C20AE002F6AF3 /* CLTDesignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2384DEAE183C20AE002F6AF3 /* CLTDesignCell.m */; };
+		2384DEB1183C21E2002F6AF3 /* CLTAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2384DEB0183C21E2002F6AF3 /* CLTAddressCell.xib */; };
 		23A2E94B1825CA3D003275D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2E94A1825CA3D003275D4 /* Foundation.framework */; };
 		23A2E94D1825CA3D003275D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2E94C1825CA3D003275D4 /* CoreGraphics.framework */; };
 		23A2E94F1825CA3D003275D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2E94E1825CA3D003275D4 /* UIKit.framework */; };
@@ -38,7 +43,6 @@
 		23A2E9AB18262A72003275D4 /* Us_Sample@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9A918262A72003275D4 /* Us_Sample@2x.png */; };
 		23A2E9AC18262A72003275D4 /* Wedmail_Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9AA18262A72003275D4 /* Wedmail_Logo@2x.png */; };
 		23A2E9B2182637ED003275D4 /* UIApplication+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9B1182637ED003275D4 /* UIApplication+Test.m */; };
-		23A2E9B81826BAED003275D4 /* CLTDesignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9B71826BAED003275D4 /* CLTDesignCell.m */; };
 		23A2E9C11826CB8B003275D4 /* UIImage+Width.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9C01826CB8B003275D4 /* UIImage+Width.m */; };
 		23A2E9C51826CEF5003275D4 /* CLTInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9C31826CEF5003275D4 /* CLTInviteViewController.m */; };
 		23A2E9C61826CEF5003275D4 /* CLTInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9C41826CEF5003275D4 /* CLTInviteViewController.xib */; };
@@ -65,9 +69,14 @@
 		23A2E9F51826EF8E003275D4 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9EB1826EF8E003275D4 /* AppIcon76x76@2x.png */; };
 		23A2E9F61826EF8E003275D4 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9EC1826EF8E003275D4 /* iTunesArtwork.png */; };
 		23A2E9F71826EF8E003275D4 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9ED1826EF8E003275D4 /* iTunesArtwork@2x.png */; };
-		23A2E9F91826F12E003275D4 /* Default@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9F81826F12E003275D4 /* Default@2x.jpg */; };
-		23A2E9FB1826F184003275D4 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A2E9FA1826F184003275D4 /* Images-2.xcassets */; };
 		23A2E9FE18270D45003275D4 /* UIView+Rasterize.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A2E9FD18270D45003275D4 /* UIView+Rasterize.m */; };
+		23BBF219183A8101009D1C3B /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BBF210183A8101009D1C3B /* UIImage+Alpha.m */; };
+		23BBF21A183A8101009D1C3B /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BBF212183A8101009D1C3B /* UIImage+FixOrientation.m */; };
+		23BBF21B183A8101009D1C3B /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BBF214183A8101009D1C3B /* UIImage+Resize.m */; };
+		23BBF21C183A8101009D1C3B /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BBF216183A8101009D1C3B /* UIImage+Rotate.m */; };
+		23BBF21D183A8101009D1C3B /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BBF218183A8101009D1C3B /* UIImage+RoundedCorner.m */; };
+		23BBF22B183AB802009D1C3B /* CLTIPADMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BBF229183AB802009D1C3B /* CLTIPADMainViewController.m */; };
+		23BBF22C183AB802009D1C3B /* CLTIPADMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23BBF22A183AB802009D1C3B /* CLTIPADMainViewController.xib */; };
 		A27E4FD0B8C14CCD8ED3C3CF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62164AFC133D42FF85ECA590 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +92,13 @@
 
 /* Begin PBXFileReference section */
 		0C8F5D11F6874BA0ABA13B45 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		2384DEA6183B1CD8002F6AF3 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		2384DEA8183B2609002F6AF3 /* intro_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro_text@2x.png"; sourceTree = "<group>"; };
+		2384DEAA183C2095002F6AF3 /* CLTAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLTAddressCell.h; path = "Table Cells/CLTAddressCell.h"; sourceTree = "<group>"; };
+		2384DEAB183C2095002F6AF3 /* CLTAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLTAddressCell.m; path = "Table Cells/CLTAddressCell.m"; sourceTree = "<group>"; };
+		2384DEAD183C20AE002F6AF3 /* CLTDesignCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLTDesignCell.h; path = "Table Cells/CLTDesignCell.h"; sourceTree = "<group>"; };
+		2384DEAE183C20AE002F6AF3 /* CLTDesignCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLTDesignCell.m; path = "Table Cells/CLTDesignCell.m"; sourceTree = "<group>"; };
+		2384DEB0183C21E2002F6AF3 /* CLTAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CLTAddressCell.xib; path = "Table Cells/CLTAddressCell.xib"; sourceTree = "<group>"; };
 		23A2E9471825CA3D003275D4 /* Wedmail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wedmail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A2E94A1825CA3D003275D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23A2E94C1825CA3D003275D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,8 +138,6 @@
 		23A2E9AA18262A72003275D4 /* Wedmail_Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wedmail_Logo@2x.png"; path = "Images/Wedmail_Logo@2x.png"; sourceTree = SOURCE_ROOT; };
 		23A2E9B0182637ED003275D4 /* UIApplication+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Test.h"; sourceTree = "<group>"; };
 		23A2E9B1182637ED003275D4 /* UIApplication+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Test.m"; sourceTree = "<group>"; };
-		23A2E9B61826BAED003275D4 /* CLTDesignCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTDesignCell.h; sourceTree = "<group>"; };
-		23A2E9B71826BAED003275D4 /* CLTDesignCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTDesignCell.m; sourceTree = "<group>"; };
 		23A2E9BF1826CB8B003275D4 /* UIImage+Width.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Width.h"; path = "Wedmail/UIImage+Width.h"; sourceTree = "<group>"; };
 		23A2E9C01826CB8B003275D4 /* UIImage+Width.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Width.m"; path = "Wedmail/UIImage+Width.m"; sourceTree = "<group>"; };
 		23A2E9C21826CEF5003275D4 /* CLTInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTInviteViewController.h; sourceTree = "<group>"; };
@@ -155,10 +169,21 @@
 		23A2E9EB1826EF8E003275D4 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon76x76@2x.png"; path = "Images/App Icon [Rounded]/AppIcon76x76@2x.png"; sourceTree = SOURCE_ROOT; };
 		23A2E9EC1826EF8E003275D4 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = "Images/App Icon [Rounded]/iTunesArtwork.png"; sourceTree = SOURCE_ROOT; };
 		23A2E9ED1826EF8E003275D4 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "Images/App Icon [Rounded]/iTunesArtwork@2x.png"; sourceTree = SOURCE_ROOT; };
-		23A2E9F81826F12E003275D4 /* Default@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Default@2x.jpg"; path = "Images/Default@2x.jpg"; sourceTree = SOURCE_ROOT; };
-		23A2E9FA1826F184003275D4 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		23A2E9FC18270D45003275D4 /* UIView+Rasterize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Rasterize.h"; path = "Wedmail/UIView+Rasterize.h"; sourceTree = "<group>"; };
 		23A2E9FD18270D45003275D4 /* UIView+Rasterize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Rasterize.m"; path = "Wedmail/UIView+Rasterize.m"; sourceTree = "<group>"; };
+		23BBF20F183A8101009D1C3B /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		23BBF210183A8101009D1C3B /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		23BBF211183A8101009D1C3B /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		23BBF212183A8101009D1C3B /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		23BBF213183A8101009D1C3B /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		23BBF214183A8101009D1C3B /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		23BBF215183A8101009D1C3B /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		23BBF216183A8101009D1C3B /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		23BBF217183A8101009D1C3B /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		23BBF218183A8101009D1C3B /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		23BBF228183AB802009D1C3B /* CLTIPADMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLTIPADMainViewController.h; path = "iPad View Controllers/CLTIPADMainViewController.h"; sourceTree = "<group>"; };
+		23BBF229183AB802009D1C3B /* CLTIPADMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLTIPADMainViewController.m; path = "iPad View Controllers/CLTIPADMainViewController.m"; sourceTree = "<group>"; };
+		23BBF22A183AB802009D1C3B /* CLTIPADMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CLTIPADMainViewController.xib; path = "iPad View Controllers/CLTIPADMainViewController.xib"; sourceTree = "<group>"; };
 		62164AFC133D42FF85ECA590 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -228,35 +253,15 @@
 		23A2E9501825CA3D003275D4 /* Wedmail */ = {
 			isa = PBXGroup;
 			children = (
-				23A2E9B51826BA9F003275D4 /* TableCells */,
+				23BBF20E183A8101009D1C3B /* UIImage+ */,
 				23A2E9891826045A003275D4 /* Fonts */,
 				23A2E97E1825D189003275D4 /* Images */,
+				23A2E9B51826BA9F003275D4 /* TableCells */,
 				23A2E9591825CA3D003275D4 /* CLTAppDelegate.h */,
 				23A2E95A1825CA3D003275D4 /* CLTAppDelegate.m */,
-				23A2E9C21826CEF5003275D4 /* CLTInviteViewController.h */,
-				23A2E9C31826CEF5003275D4 /* CLTInviteViewController.m */,
-				23A2E9C41826CEF5003275D4 /* CLTInviteViewController.xib */,
-				23A2E9C71826D80D003275D4 /* CLTImportAddressesViewController.h */,
-				23A2E9C81826D80D003275D4 /* CLTImportAddressesViewController.m */,
-				23A2E9C91826D80D003275D4 /* CLTImportAddressesViewController.xib */,
-				23A2E9CC1826D908003275D4 /* CLTConfirmationViewController.h */,
-				23A2E9CD1826D908003275D4 /* CLTConfirmationViewController.m */,
-				23A2E9CE1826D908003275D4 /* CLTConfirmationViewController.xib */,
-				23A2E9791825CCD4003275D4 /* CLTLaunchViewController.h */,
-				23A2E97A1825CCD4003275D4 /* CLTLaunchViewController.m */,
-				23A2E97B1825CCD4003275D4 /* CLTLaunchViewController.xib */,
-				23A2E95C1825CA3D003275D4 /* Images.xcassets */,
-				23A2E9811825D64B003275D4 /* CLTDesignMenuViewController.h */,
-				23A2E9821825D64B003275D4 /* CLTDesignMenuViewController.m */,
-				23A2E9831825D64B003275D4 /* CLTDesignMenuViewController.xib */,
+				23BBF21F183AB6E5009D1C3B /* iPad View Controllers */,
+				23BBF21E183AB6D2009D1C3B /* iPhone View Controllers */,
 				23A2E9511825CA3D003275D4 /* Supporting Files */,
-				23A2E99E18260706003275D4 /* CLTCustomizeCardViewController.h */,
-				23A2E99F18260706003275D4 /* CLTCustomizeCardViewController.m */,
-				23A2E9A018260706003275D4 /* CLTCustomizeCardViewController.xib */,
-				23A2E9D51826E92B003275D4 /* CLTSendViewController.h */,
-				23A2E9D61826E92B003275D4 /* CLTSendViewController.m */,
-				23A2E9D71826E92B003275D4 /* CLTSendViewController.xib */,
-				23A2E9FA1826F184003275D4 /* Images-2.xcassets */,
 			);
 			path = Wedmail;
 			sourceTree = "<group>";
@@ -293,7 +298,8 @@
 		23A2E97E1825D189003275D4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				23A2E9F81826F12E003275D4 /* Default@2x.jpg */,
+				2384DEA8183B2609002F6AF3 /* intro_text@2x.png */,
+				23A2E95C1825CA3D003275D4 /* Images.xcassets */,
 				23A2E9E41826EF8E003275D4 /* AppIcon29x29.png */,
 				23A2E9E51826EF8E003275D4 /* AppIcon29x29@2x.png */,
 				23A2E9E71826EF8E003275D4 /* AppIcon40x40@2x.png */,
@@ -314,6 +320,7 @@
 				23A2E9A918262A72003275D4 /* Us_Sample@2x.png */,
 				23A2E9AA18262A72003275D4 /* Wedmail_Logo@2x.png */,
 				23A2E97F1825D197003275D4 /* Couple@2x.png */,
+				2384DEA6183B1CD8002F6AF3 /* Images-2.xcassets */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -337,10 +344,68 @@
 		23A2E9B51826BA9F003275D4 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
-				23A2E9B61826BAED003275D4 /* CLTDesignCell.h */,
-				23A2E9B71826BAED003275D4 /* CLTDesignCell.m */,
+				2384DEAD183C20AE002F6AF3 /* CLTDesignCell.h */,
+				2384DEAE183C20AE002F6AF3 /* CLTDesignCell.m */,
+				2384DEAA183C2095002F6AF3 /* CLTAddressCell.h */,
+				2384DEAB183C2095002F6AF3 /* CLTAddressCell.m */,
+				2384DEB0183C21E2002F6AF3 /* CLTAddressCell.xib */,
 			);
 			name = TableCells;
+			sourceTree = "<group>";
+		};
+		23BBF20E183A8101009D1C3B /* UIImage+ */ = {
+			isa = PBXGroup;
+			children = (
+				23BBF20F183A8101009D1C3B /* UIImage+Alpha.h */,
+				23BBF210183A8101009D1C3B /* UIImage+Alpha.m */,
+				23BBF211183A8101009D1C3B /* UIImage+FixOrientation.h */,
+				23BBF212183A8101009D1C3B /* UIImage+FixOrientation.m */,
+				23BBF213183A8101009D1C3B /* UIImage+Resize.h */,
+				23BBF214183A8101009D1C3B /* UIImage+Resize.m */,
+				23BBF215183A8101009D1C3B /* UIImage+Rotate.h */,
+				23BBF216183A8101009D1C3B /* UIImage+Rotate.m */,
+				23BBF217183A8101009D1C3B /* UIImage+RoundedCorner.h */,
+				23BBF218183A8101009D1C3B /* UIImage+RoundedCorner.m */,
+			);
+			path = "UIImage+";
+			sourceTree = "<group>";
+		};
+		23BBF21E183AB6D2009D1C3B /* iPhone View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				23A2E9C21826CEF5003275D4 /* CLTInviteViewController.h */,
+				23A2E9C31826CEF5003275D4 /* CLTInviteViewController.m */,
+				23A2E9C41826CEF5003275D4 /* CLTInviteViewController.xib */,
+				23A2E9C71826D80D003275D4 /* CLTImportAddressesViewController.h */,
+				23A2E9C81826D80D003275D4 /* CLTImportAddressesViewController.m */,
+				23A2E9C91826D80D003275D4 /* CLTImportAddressesViewController.xib */,
+				23A2E9CC1826D908003275D4 /* CLTConfirmationViewController.h */,
+				23A2E9CD1826D908003275D4 /* CLTConfirmationViewController.m */,
+				23A2E9CE1826D908003275D4 /* CLTConfirmationViewController.xib */,
+				23A2E9791825CCD4003275D4 /* CLTLaunchViewController.h */,
+				23A2E97A1825CCD4003275D4 /* CLTLaunchViewController.m */,
+				23A2E97B1825CCD4003275D4 /* CLTLaunchViewController.xib */,
+				23A2E9811825D64B003275D4 /* CLTDesignMenuViewController.h */,
+				23A2E9821825D64B003275D4 /* CLTDesignMenuViewController.m */,
+				23A2E9831825D64B003275D4 /* CLTDesignMenuViewController.xib */,
+				23A2E99E18260706003275D4 /* CLTCustomizeCardViewController.h */,
+				23A2E99F18260706003275D4 /* CLTCustomizeCardViewController.m */,
+				23A2E9A018260706003275D4 /* CLTCustomizeCardViewController.xib */,
+				23A2E9D51826E92B003275D4 /* CLTSendViewController.h */,
+				23A2E9D61826E92B003275D4 /* CLTSendViewController.m */,
+				23A2E9D71826E92B003275D4 /* CLTSendViewController.xib */,
+			);
+			name = "iPhone View Controllers";
+			sourceTree = "<group>";
+		};
+		23BBF21F183AB6E5009D1C3B /* iPad View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				23BBF228183AB802009D1C3B /* CLTIPADMainViewController.h */,
+				23BBF229183AB802009D1C3B /* CLTIPADMainViewController.m */,
+				23BBF22A183AB802009D1C3B /* CLTIPADMainViewController.xib */,
+			);
+			name = "iPad View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +488,7 @@
 			files = (
 				23A2E97D1825CCD4003275D4 /* CLTLaunchViewController.xib in Resources */,
 				23A2E9551825CA3D003275D4 /* InfoPlist.strings in Resources */,
+				2384DEB1183C21E2002F6AF3 /* CLTAddressCell.xib in Resources */,
 				23A2E9F31826EF8E003275D4 /* AppIcon60x60@2x.png in Resources */,
 				23A2E9F01826EF8E003275D4 /* AppIcon40x40.png in Resources */,
 				23A2E9E11826ED0B003275D4 /* design_1@2x.png in Resources */,
@@ -439,7 +505,6 @@
 				23A2E98B1826045A003275D4 /* GothamMedium.ttf in Resources */,
 				23A2E95D1825CA3D003275D4 /* Images.xcassets in Resources */,
 				23A2E9D21826D96A003275D4 /* wedmail_words@2x.png in Resources */,
-				23A2E9FB1826F184003275D4 /* Images-2.xcassets in Resources */,
 				23A2E9EE1826EF8E003275D4 /* AppIcon29x29.png in Resources */,
 				23A2E9AB18262A72003275D4 /* Us_Sample@2x.png in Resources */,
 				23A2E999182604AF003275D4 /* Gotham-BookItalic.ttf in Resources */,
@@ -447,14 +512,16 @@
 				23A2E9DE1826ED0B003275D4 /* design_3@2x.png in Resources */,
 				23A2E9F61826EF8E003275D4 /* iTunesArtwork.png in Resources */,
 				23A2E997182604AF003275D4 /* Gotham-Bold.ttf in Resources */,
+				2384DEA9183B2609002F6AF3 /* intro_text@2x.png in Resources */,
 				23A2E9A218260706003275D4 /* CLTCustomizeCardViewController.xib in Resources */,
 				23A2E9DF1826ED0B003275D4 /* design_4@2x.png in Resources */,
 				23A2E9D91826E92B003275D4 /* CLTSendViewController.xib in Resources */,
 				23A2E998182604AF003275D4 /* Gotham-Book.ttf in Resources */,
+				2384DEA7183B1CD8002F6AF3 /* Images-2.xcassets in Resources */,
 				23A2E99A182604AF003275D4 /* Gotham-Light.ttf in Resources */,
-				23A2E9F91826F12E003275D4 /* Default@2x.jpg in Resources */,
 				23A2E995182604AF003275D4 /* Gotham-Black.ttf in Resources */,
 				23A2E9F11826EF8E003275D4 /* AppIcon40x40@2x.png in Resources */,
+				23BBF22C183AB802009D1C3B /* CLTIPADMainViewController.xib in Resources */,
 				23A2E9E01826ED0B003275D4 /* design_2@2x.png in Resources */,
 				23A2E9C61826CEF5003275D4 /* CLTInviteViewController.xib in Resources */,
 				23A2E9F51826EF8E003275D4 /* AppIcon76x76@2x.png in Resources */,
@@ -514,16 +581,23 @@
 			files = (
 				23A2E9B2182637ED003275D4 /* UIApplication+Test.m in Sources */,
 				23A2E9FE18270D45003275D4 /* UIView+Rasterize.m in Sources */,
+				23BBF22B183AB802009D1C3B /* CLTIPADMainViewController.m in Sources */,
 				23A2E9C51826CEF5003275D4 /* CLTInviteViewController.m in Sources */,
 				23A2E9D81826E92B003275D4 /* CLTSendViewController.m in Sources */,
+				23BBF21C183A8101009D1C3B /* UIImage+Rotate.m in Sources */,
+				23BBF219183A8101009D1C3B /* UIImage+Alpha.m in Sources */,
+				2384DEAF183C20AE002F6AF3 /* CLTDesignCell.m in Sources */,
 				23A2E95B1825CA3D003275D4 /* CLTAppDelegate.m in Sources */,
+				2384DEAC183C2095002F6AF3 /* CLTAddressCell.m in Sources */,
 				23A2E9841825D64B003275D4 /* CLTDesignMenuViewController.m in Sources */,
 				23A2E9A118260706003275D4 /* CLTCustomizeCardViewController.m in Sources */,
 				23A2E9CF1826D908003275D4 /* CLTConfirmationViewController.m in Sources */,
+				23BBF21D183A8101009D1C3B /* UIImage+RoundedCorner.m in Sources */,
+				23BBF21B183A8101009D1C3B /* UIImage+Resize.m in Sources */,
 				23A2E9571825CA3D003275D4 /* main.m in Sources */,
 				23A2E9CA1826D80D003275D4 /* CLTImportAddressesViewController.m in Sources */,
-				23A2E9B81826BAED003275D4 /* CLTDesignCell.m in Sources */,
 				23A2E9C11826CB8B003275D4 /* UIImage+Width.m in Sources */,
+				23BBF21A183A8101009D1C3B /* UIImage+FixOrientation.m in Sources */,
 				23A2E97C1825CCD4003275D4 /* CLTLaunchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,8 +723,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wedmail/Wedmail-Prefix.pch";
 				INFOPLIST_FILE = "Wedmail/Wedmail-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -664,8 +739,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wedmail/Wedmail-Prefix.pch";
 				INFOPLIST_FILE = "Wedmail/Wedmail-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

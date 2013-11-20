@@ -10,6 +10,12 @@
 #import "CLTSendViewController.h"
 #import <QBFlatButton/QBFlatButton.h>
 #import <UIColor-Utilities/UIColor+Expanded.h>
+#import <SGNavigationProgress/UINavigationController+SGProgress.h>
+#import <AFNetworking/AFNetworking.h>
+#import <RHAddressBook/RHPerson.h>
+#import <RHAddressBook/RHAddressBook.h>
+
+@import AddressBook;
 
 @interface CLTImportAddressesViewController ()
 @property (weak, nonatomic) IBOutlet QBFlatButton *importButton;
@@ -31,7 +37,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"Import Addresses";
+    self.title = @"Step 4: Import Addresses";
     
     // Do any additional setup after loading the view from its nib.
     [self.importButton setRadius:0.0];
@@ -45,6 +51,39 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationController setSGProgressPercentage:5 * (100/6)];
+    [self postable];
+}
+
+-(void)postable{
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"gzip,deflate,sdch" forHTTPHeaderField:@"Accept-Encoding"];
+    [manager POST:@"https://www.postable.com/login" parameters:@{@"login": @"hana.nesbitt@gmail.com", @"password" : @"StormiePost20"} constructingBodyWithBlock:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        [manager POST:@"https://www.postable.com/contacts/export" parameters:@{@"export_format": @"vcard"} constructingBodyWithBlock:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            if (responseObject) {
+                NSString* string = [NSString stringWithUTF8String:[responseObject bytes]];
+
+                NSError * error = nil;
+                [string writeToFile:[@"~/Documents/postable.vcf" stringByExpandingTildeInPath] atomically:YES encoding:NSUTF8StringEncoding error:&error];
+                ABAddressBookRef book = ABAddressBookCreateWithOptions(nil, nil);
+
+                ABRecordRef defaultSource = ABAddressBookCopyDefaultSource(book);
+                CFArrayRef vCardPeople = ABPersonCreatePeopleInSourceWithVCardRepresentation(defaultSource, (__bridge CFDataRef)(responseObject));
+                for (CFIndex index = 0; index < CFArrayGetCount(vCardPeople); index++) {
+                    ABRecordRef person = CFArrayGetValueAtIndex(vCardPeople, index);
+
+                    NSLog(@"%@", ABRecordCopyCompositeName(person));
+                }
+            }
+
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+        }];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 - (IBAction)importAddresses:(id)sender {

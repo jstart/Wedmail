@@ -13,14 +13,13 @@
 #import <UIColor-Utilities/UIColor+Expanded.h>
 #import <RHAddressBook/RHAddressBook.h>
 #import <RHAddressBook/RHPerson.h>
+#import <SGNavigationProgress/UINavigationController+SGProgress.h>
 
 @interface CLTSendViewController ()
 @property (weak, nonatomic) IBOutlet QBFlatButton *reviewButton;
 @property (weak, nonatomic) IBOutlet QBFlatButton *orderButton;
 @property (nonatomic, strong) RHAddressBook * addressBook;
-@property (nonatomic, strong) NSMutableArray * contacts;
-@property (nonatomic, strong) NSMutableArray * selectedContacts;
-@property (nonatomic, strong) NSMutableArray * filteredContacts;
+@property (nonatomic, strong) NSArray * contacts;
 @property (weak, nonatomic) IBOutlet UILabel *addressCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guestsLabel;
@@ -42,7 +41,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"Send Them on Their Way";
+    self.title = @"Step 6: Send & Pay";
 
     // Do any additional setup after loading the view from its nib.
     [self.reviewButton setRadius:0.0];
@@ -64,17 +63,34 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController setSGProgressPercentage:100];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSPredicate * addressFilterPredicate = [NSPredicate predicateWithBlock:^(id evaluatedObject, NSDictionary * bindings){
+            RHPerson * person = evaluatedObject;
+            if ([person isOrganization]) {
+                return NO;
+            }
+
+            if (person.addresses.count > 0) {
+                NSString * street = [person.addresses valueAtIndex:0][@"Street"];
+                NSString * name = [person compositeName];
+                if (street && name) {
+                    return YES;
+                }
+            }else{
+                return NO;
+            }
+            return NO;
+        }];
 
         if ([RHAddressBook authorizationStatus] == RHAuthorizationStatusNotDetermined){
-            self.addressBook = [[RHAddressBook alloc] init];
+            self.addressBook = self.addressBook ? self.addressBook : [[RHAddressBook alloc] init];
             [self.addressBook requestAuthorizationWithCompletion:^(bool granted, NSError * error){
                 if (granted) {
-                    self.contacts = [[self.addressBook peopleOrderedByFirstName]  mutableCopy];
-                    self.selectedContacts = [NSMutableArray array];
-                    self.filteredContacts = self.contacts;
+                    self.contacts = [[self.addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:addressFilterPredicate];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self.addressCountLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)self.contacts.count]];
+                        self.addressCountLabel.hidden = NO;
                     });
                 } else {
                     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can't access contacts" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -82,12 +98,12 @@
                 }
             }];
         }else{
-            self.addressBook = [[RHAddressBook alloc] init];
-            self.contacts = [[self.addressBook peopleOrderedByFirstName] mutableCopy];
-            self.selectedContacts = [NSMutableArray array];
+            self.addressBook = self.addressBook ? self.addressBook : [[RHAddressBook alloc] init];
+            self.contacts = [[self.addressBook peopleOrderedByFirstName] filteredArrayUsingPredicate:addressFilterPredicate];
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.addressCountLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)self.contacts.count]];
+                self.addressCountLabel.hidden = NO;
             });
         }
     });
@@ -95,6 +111,7 @@
 
 - (IBAction)reviewAddresses:(id)sender {
     CLTInviteViewController * inviteViewController = [[CLTInviteViewController alloc] init];
+    [inviteViewController setAddressBook:self.addressBook];
     [self.navigationController pushViewController:inviteViewController animated:YES];
 }
 
