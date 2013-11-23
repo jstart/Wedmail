@@ -12,6 +12,7 @@
 		2384DEAC183C2095002F6AF3 /* CLTAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2384DEAB183C2095002F6AF3 /* CLTAddressCell.m */; };
 		2384DEAF183C20AE002F6AF3 /* CLTDesignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2384DEAE183C20AE002F6AF3 /* CLTDesignCell.m */; };
 		2384DEB1183C21E2002F6AF3 /* CLTAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2384DEB0183C21E2002F6AF3 /* CLTAddressCell.xib */; };
+		2384DECD183C765E002F6AF3 /* CLTPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2384DECC183C765E002F6AF3 /* CLTPerson.m */; };
 		23A2E94B1825CA3D003275D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2E94A1825CA3D003275D4 /* Foundation.framework */; };
 		23A2E94D1825CA3D003275D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2E94C1825CA3D003275D4 /* CoreGraphics.framework */; };
 		23A2E94F1825CA3D003275D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2E94E1825CA3D003275D4 /* UIKit.framework */; };
@@ -99,6 +100,8 @@
 		2384DEAD183C20AE002F6AF3 /* CLTDesignCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLTDesignCell.h; path = "Table Cells/CLTDesignCell.h"; sourceTree = "<group>"; };
 		2384DEAE183C20AE002F6AF3 /* CLTDesignCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLTDesignCell.m; path = "Table Cells/CLTDesignCell.m"; sourceTree = "<group>"; };
 		2384DEB0183C21E2002F6AF3 /* CLTAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CLTAddressCell.xib; path = "Table Cells/CLTAddressCell.xib"; sourceTree = "<group>"; };
+		2384DECB183C765E002F6AF3 /* CLTPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLTPerson.h; path = Utilties/CLTPerson.h; sourceTree = "<group>"; };
+		2384DECC183C765E002F6AF3 /* CLTPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLTPerson.m; path = Utilties/CLTPerson.m; sourceTree = "<group>"; };
 		23A2E9471825CA3D003275D4 /* Wedmail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wedmail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A2E94A1825CA3D003275D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23A2E94C1825CA3D003275D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -212,6 +215,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2384DEB2183C6F00002F6AF3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2384DECB183C765E002F6AF3 /* CLTPerson.h */,
+				2384DECC183C765E002F6AF3 /* CLTPerson.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		23A2E93E1825CA3D003275D4 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +265,7 @@
 		23A2E9501825CA3D003275D4 /* Wedmail */ = {
 			isa = PBXGroup;
 			children = (
+				2384DEB2183C6F00002F6AF3 /* Utilities */,
 				23BBF20E183A8101009D1C3B /* UIImage+ */,
 				23A2E9891826045A003275D4 /* Fonts */,
 				23A2E97E1825D189003275D4 /* Images */,
@@ -579,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2384DECD183C765E002F6AF3 /* CLTPerson.m in Sources */,
 				23A2E9B2182637ED003275D4 /* UIApplication+Test.m in Sources */,
 				23A2E9FE18270D45003275D4 /* UIView+Rasterize.m in Sources */,
 				23BBF22B183AB802009D1C3B /* CLTIPADMainViewController.m in Sources */,

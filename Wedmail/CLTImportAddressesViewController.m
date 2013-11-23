@@ -13,7 +13,8 @@
 #import <SGNavigationProgress/UINavigationController+SGProgress.h>
 #import <AFNetworking/AFNetworking.h>
 #import <RHAddressBook/RHPerson.h>
-#import <RHAddressBook/RHAddressBook.h>
+#import "CLTPerson.h"
+#import "CLTInviteViewController.h"
 
 @import AddressBook;
 
@@ -68,16 +69,18 @@
                 NSError * error = nil;
                 [string writeToFile:[@"~/Documents/postable.vcf" stringByExpandingTildeInPath] atomically:YES encoding:NSUTF8StringEncoding error:&error];
                 ABAddressBookRef book = ABAddressBookCreateWithOptions(nil, nil);
-
                 ABRecordRef defaultSource = ABAddressBookCopyDefaultSource(book);
                 CFArrayRef vCardPeople = ABPersonCreatePeopleInSourceWithVCardRepresentation(defaultSource, (__bridge CFDataRef)(responseObject));
+                NSMutableArray * contacts = [NSMutableArray array];
                 for (CFIndex index = 0; index < CFArrayGetCount(vCardPeople); index++) {
                     ABRecordRef person = CFArrayGetValueAtIndex(vCardPeople, index);
-
-                    NSLog(@"%@", ABRecordCopyCompositeName(person));
+                    CLTPerson * contact = [[CLTPerson alloc] initWithABRecordRef:person];
+                    [contacts addObject:contact];
                 }
+                CLTInviteViewController * inviteViewController = [[CLTInviteViewController alloc] init];
+                inviteViewController.contacts = contacts;
+//                [self presentViewController:inviteViewController animated:YES completion:nil];
             }
-
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
         }];

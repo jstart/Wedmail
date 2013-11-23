@@ -20,7 +20,6 @@
 
 @property (nonatomic, strong) NSMutableArray * currentContacts;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *contactSegmentedControl;
-@property (nonatomic, strong) NSArray *contacts;
 @property (nonatomic, strong) NSMutableArray *selectedContacts;
 
 @end
@@ -61,6 +60,11 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    if (self.contacts) {
+        self.selectedContacts = [self.contacts mutableCopy];
+        [self.tableView reloadData];
+        alreadyLoaded = YES;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{

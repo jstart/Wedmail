@@ -11,5 +11,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) RHAddressBook * addressBook;
+@property (nonatomic, strong) NSArray *contacts;
 
 @end
